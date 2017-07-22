@@ -2,9 +2,15 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import Image from '../../components/Image/Image';
+
 import * as controlActions from '../../actions/controls';
 
-const App = () => (<h1>Hello World</h1>);
+import './App.css';
+
+const App = () => (
+  <Image />
+);
 
 /**
  * Add each state to props

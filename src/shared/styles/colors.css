@@ -4,8 +4,8 @@
   --alizarin: #c0392b;
   --emerald: #2ecc71;
 
-  --page-background: var(--midnight-blue);
-  --stage-background: var(--clouds);
+  --page-background: var(--clouds);
+  --stage-background: var(--midnight-blue);
   --action: var(--emerald);
   --cancel: var(--alizarin);
 }

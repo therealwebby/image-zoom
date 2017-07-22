@@ -1,7 +1,11 @@
-@import './shared/styles/colors.css';
+@import '../../shared/styles/colors.css';
 
 body, html {
   margin: 0;
   padding: 0;
   background-color: var(--page-background);
+}
+
+#app {
+  height: 100%;
 }
