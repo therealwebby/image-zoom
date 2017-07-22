@@ -18,14 +18,15 @@ class App extends Component {
   render() {
     return (
       <div id="app">
-        <Image
-          scale={this.props.controls.scale}
-        />
         <ZoomControls
           zoomIn={this.props.zoomIn}
           zoomOut={this.props.zoomOut}
           updateZoomPosition={this.props.updateZoomPosition}
           scale={this.props.controls.scale}
+        />
+        <Image
+          scale={this.props.controls.scale}
+          updateZoomPosition={this.props.updateZoomPosition}
         />
       </div>
     );

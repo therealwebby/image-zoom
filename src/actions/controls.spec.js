@@ -16,9 +16,9 @@ describe('Actions', () => {
       });
 
       test('can create an action to update the zoom permission with the passed scale value', () => {
-        expect(actions.updateZoomPosition(1.25)).toEqual({
+        expect(actions.updateZoomPosition(0.8)).toEqual({
           type: 'UPDATE_ZOOM_POSITION',
-          scale: 1.25
+          scale: 0.8
         });
       });
     });
