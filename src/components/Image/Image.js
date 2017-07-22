@@ -20,8 +20,15 @@ export default class Image extends Component {
 
   onImageLoad(event) {
     const imageElement = event.target;
+    this.setupImageScale(imageElement);
+  }
+
+  setupImageScale(imageElement) {
     let horizontalScale = 1;
     let verticalScale = 1;
+    this.imageHeight = 'auto';
+    this.imageWidth = 'auto';
+
     this.imageHeight = imageElement.offsetHeight;
     this.imageWidth = imageElement.offsetWidth;
 
@@ -43,8 +50,8 @@ export default class Image extends Component {
   render() {
     this.styles = {
       transform: `scale(${this.props.scale}, ${this.props.scale})`,
-      height: this.imageHeight,
-      width: this.imageWidth,
+      height: this.imageHeight !== 'auto' ? 'auto' : this.imageHeight,
+      width: this.imageWidth !== 'auto' ? 'auto' : this.imageWidth,
       marginTop: isNaN(-(this.imageHeight / 2)) ? 0 : -(this.imageHeight / 2),
       marginLeft: isNaN(-(this.imageWidth / 2)) ? 0 : -(this.imageWidth / 2)
     };

@@ -13,11 +13,29 @@ export default class ImageSelector extends Component {
 
     this.availableImages = [mainPageImage, onboardingInvite, onboardingLocation];
     this.props.setActiveImage(this.availableImages[0]);
+
+    this.handleOnChange = this.handleOnChange.bind(this);
+  }
+
+  handleOnChange(event) {
+    this.props.setActiveImage(event.target.value);
   }
 
   render() {
     return (
-      <h1>selector {this.props.activeImageUrl}</h1>
+      <select
+        defaultValue={this.props.activeImageUrl}
+        onChange={this.handleOnChange}
+      >
+        {this.availableImages.map((image, index) =>
+          (<option
+            value={image}
+            key={image}
+          >
+            Image {index}
+          </option>)
+        )};
+      </select>
     );
   }
 }

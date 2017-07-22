@@ -25,14 +25,14 @@ class App extends Component {
           updateZoomPosition={this.props.updateZoomPosition}
           scale={this.props.controls.scale}
         />
+        <ImageSelector
+          activeImageUrl={this.props.controls.activeImageUrl}
+          setActiveImage={this.props.setActiveImage}
+        />
         <Image
           scale={this.props.controls.scale}
           updateZoomPosition={this.props.updateZoomPosition}
           activeImageUrl={this.props.controls.activeImageUrl}
-        />
-        <ImageSelector
-          activeImageUrl={this.props.controls.activeImageUrl}
-          setActiveImage={this.props.setActiveImage}
         />
       </div>
     );
