@@ -6,33 +6,33 @@ describe('Reducers', () => {
     describe('adjusting state based on control actions', () => {
       test('will increase scale by 0.1 when zooming in', () => {
         expect(controls(
-          { scale: 1 },
+          { scale: 0.5 },
           { type: actions.ZOOM_IN }
-        )).toEqual({ scale: 1.1 });
+        )).toEqual({ scale: 0.6 });
       });
 
       test('will decrease scale by 0.1 when zooming out', () => {
         expect(controls(
-          { scale: 1.5 },
+          { scale: 0.5 },
           { type: actions.ZOOM_OUT }
-        )).toEqual({ scale: 1.4 });
+        )).toEqual({ scale: 0.4 });
       });
 
-      test('will decrease scale to when zooming out and the scale is less than 1.1', () => {
+      test('will decrease scale to 0.1 when zooming out and the scale is less than 0.2', () => {
         expect(controls(
-          { scale: 1.05 },
+          { scale: 0.15 },
           { type: actions.ZOOM_OUT }
-        )).toEqual({ scale: 1 });
+        )).toEqual({ scale: 0.1 });
       });
 
       test('will set scale to a value passed to it', () => {
         expect(controls(
-          { scale: 1.9 },
+          { scale: 0.7 },
           {
             type: actions.UPDATE_ZOOM_POSITION,
-            scale: 1.25
+            scale: 0.2
           }
-        )).toEqual({ scale: 1.25 });
+        )).toEqual({ scale: 0.2 });
       });
     });
   });
