@@ -23,19 +23,22 @@ export default class ImageSelector extends Component {
 
   render() {
     return (
-      <select
-        defaultValue={this.props.activeImageUrl}
-        onChange={this.handleOnChange}
-      >
-        {this.availableImages.map((image, index) =>
-          (<option
-            value={image}
-            key={image}
-          >
-            Image {index}
-          </option>)
-        )};
-      </select>
+      <div className="image-selector">
+        <select
+          className="image-selector__dropdown"
+          defaultValue={this.props.activeImageUrl}
+          onChange={this.handleOnChange}
+        >
+          {this.availableImages.map((image, index) =>
+            (<option
+              value={image}
+              key={image}
+            >
+              Image {index}
+            </option>)
+          )};
+        </select>
+      </div>
     );
   }
 }

@@ -1,0 +1,35 @@
+@import '../../shared/styles/colors.css';
+
+.zoom-controls {
+  position: relative;
+  float: right;
+  margin-right: 24px;
+  height: 10%;
+}
+
+.zoom-controls__button {
+  position: relative;
+  margin-right: 8px;
+  padding: 5px 6px;
+  background: grey;
+  border: 0;
+  color: white;
+  text-transform: uppercase;
+}
+
+.zoom-controls__button--zoom-in {
+  background-color: var(--action);
+}
+
+.zoom-controls__button--zoom-out {
+  background-color: var(--cancel);
+}
+
+.zoom-controls__button,
+.zoom-controls__percentage {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 25px
+}

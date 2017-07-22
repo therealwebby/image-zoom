@@ -23,14 +23,14 @@ export default class ZoomControls extends Component {
     return (
       <div className="zoom-controls">
         <button
-          className="zoom-controls__zoom-in"
+          className="zoom-controls__button zoom-controls__button--zoom-in"
           onClick={this.onZoomIn}
           disabled={this.props.scale === 1}
         >
           Zoom In
         </button>
         <button
-          className="zoom-controls__zoom-out"
+          className="zoom-controls__button zoom-controls__button--zoom-out"
           onClick={this.onZoomOut}
           disabled={this.props.scale === 0.1}
         >
