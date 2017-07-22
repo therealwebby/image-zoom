@@ -17,12 +17,12 @@ module.exports = {
     loaders: [
       {
         enforce: 'pre',
-        test: /\.js$/,
+        test: /^(?!.*\.spec\.js$).*\.js$/,
         loaders: ['eslint-loader'],
         include: path.join(__dirname, 'src')
       },
       {
-        test: /\.js$/,
+        test: /^(?!.*\.spec\.js$).*\.js$/,
         loaders: ['babel-loader'],
         include: path.join(__dirname, 'src')
       },

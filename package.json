@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p",
     "dev": "webpack-dev-server --hot --open --colors --progress",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "keywords": [],
   "author": "",
