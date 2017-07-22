@@ -47,6 +47,5 @@ export default class ZoomControls extends Component {
 ZoomControls.propTypes = {
   scale: PropTypes.number.isRequired,
   zoomIn: PropTypes.func.isRequired,
-  zoomOut: PropTypes.func.isRequired,
-  // updateZoomPosition: PropTypes.func.isRequired
+  zoomOut: PropTypes.func.isRequired
 };

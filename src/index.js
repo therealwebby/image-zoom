@@ -6,7 +6,8 @@ import configureStore from './configure-store';
 
 const store = configureStore({
   controls: {
-    scale: 1
+    scale: 1,
+    activeImageUrl: ''
   }
 });
 

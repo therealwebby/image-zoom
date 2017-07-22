@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import './Image.css';
-import image from '../../assets/images/Main-page.png';
 
 function _hasVerticallyOverflowingImage(imageElement) {
   return imageElement.offsetHeight > imageElement.parentElement.offsetHeight;
@@ -46,14 +45,14 @@ export default class Image extends Component {
       transform: `scale(${this.props.scale}, ${this.props.scale})`,
       height: this.imageHeight,
       width: this.imageWidth,
-      marginTop: -(this.imageHeight / 2),
-      marginLeft: -(this.imageWidth / 2)
+      marginTop: isNaN(-(this.imageHeight / 2)) ? 0 : -(this.imageHeight / 2),
+      marginLeft: isNaN(-(this.imageWidth / 2)) ? 0 : -(this.imageWidth / 2)
     };
 
     return (
       <div className="image-container">
         <img
-          src={image}
+          src={this.props.activeImageUrl}
           className="image"
           alt="sunset"
           style={this.styles}
@@ -66,5 +65,6 @@ export default class Image extends Component {
 
 Image.propTypes = {
   scale: PropTypes.number.isRequired,
-  updateZoomPosition: PropTypes.func.isRequired
+  updateZoomPosition: PropTypes.func.isRequired,
+  activeImageUrl: PropTypes.string.isRequired
 };

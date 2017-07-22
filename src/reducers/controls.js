@@ -14,6 +14,10 @@ export default function controls(state = {}, action) {
       return Object.assign({}, state, {
         scale: action.scale
       });
+    case controlActions.SET_ACTIVE_IMAGE:
+      return Object.assign({}, state, {
+        activeImageUrl: action.activeImageUrl
+      });
     default: return state;
   }
 }

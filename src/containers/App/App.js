@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import Image from '../../components/Image/Image';
 import ZoomControls from '../../components/ZoomControls/ZoomControls';
+import ImageSelector from '../../components/ImageSelector/ImageSelector';
 
 import * as controlActions from '../../actions/controls';
 
@@ -27,6 +28,11 @@ class App extends Component {
         <Image
           scale={this.props.controls.scale}
           updateZoomPosition={this.props.updateZoomPosition}
+          activeImageUrl={this.props.controls.activeImageUrl}
+        />
+        <ImageSelector
+          activeImageUrl={this.props.controls.activeImageUrl}
+          setActiveImage={this.props.setActiveImage}
         />
       </div>
     );
@@ -35,17 +41,13 @@ class App extends Component {
 
 App.propTypes = {
   controls: PropTypes.shape({
-    scale: PropTypes.number.isRequried
-  }),
+    scale: PropTypes.number.isRequried,
+    activeImageUrl: PropTypes.string.isRequried
+  }).isRequired,
   zoomIn: PropTypes.func.isRequired,
   zoomOut: PropTypes.func.isRequired,
-  updateZoomPosition: PropTypes.func.isRequired
-};
-
-App.defaultProps = {
-  controls: {
-    scale: 1
-  }
+  updateZoomPosition: PropTypes.func.isRequired,
+  setActiveImage: PropTypes.func.isRequired
 };
 
 /**
