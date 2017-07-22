@@ -32,7 +32,7 @@ export default class ZoomControls extends Component {
         <button
           className="zoom-controls__zoom-out"
           onClick={this.onZoomOut}
-          disabled={this.props.scale === 0.5}
+          disabled={this.props.scale === 0.1}
         >
           Zoom Out
         </button>

@@ -18,11 +18,11 @@ describe('Reducers', () => {
         )).toEqual({ scale: 0.75 });
       });
 
-      test('will decrease scale to 0.5 when zooming out and the scale is less than 0.55', () => {
+      test('will decrease scale to 0.§ when zooming out and the scale is less than 0.15', () => {
         expect(controls(
-          { scale: 0.54 },
+          { scale: 0.14 },
           { type: actions.ZOOM_OUT }
-        )).toEqual({ scale: 0.5 })
+        )).toEqual({ scale: 0.1 });
       });
 
       test('will set scale to a value passed to it', () => {

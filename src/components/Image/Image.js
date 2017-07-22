@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import './Image.css';
-import image from '../../assets/images/flower.jpg';
+import image from '../../assets/images/Main-page.png';
 
 function _hasVerticallyOverflowingImage(imageElement) {
   return imageElement.offsetHeight > imageElement.parentElement.offsetHeight;

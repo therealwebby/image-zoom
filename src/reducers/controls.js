@@ -8,7 +8,7 @@ export default function controls(state = {}, action) {
       });
     case controlActions.ZOOM_OUT:
       return Object.assign({}, state, {
-        scale: state.scale >= 0.55 ? state.scale - 0.05 : 0.5
+        scale: state.scale >= 0.15 ? state.scale - 0.05 : 0.1
       });
     case controlActions.UPDATE_ZOOM_POSITION:
       return Object.assign({}, state, {
