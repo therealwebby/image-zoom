@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import App from './containers/App/App';
 import configureStore from './configure-store';
 
+import './index.css';
+
 const store = configureStore({});
 
 render(
