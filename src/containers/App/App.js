@@ -1,16 +1,51 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Image from '../../components/Image/Image';
+import ZoomControls from '../../components/ZoomControls/ZoomControls';
 
 import * as controlActions from '../../actions/controls';
 
 import './App.css';
 
-const App = () => (
-  <Image />
-);
+class App extends Component {
+  componentDidMount() {
+    this.props.updateZoomPosition(1);
+  }
+
+  render() {
+    return (
+      <div id="app">
+        <Image
+          scale={this.props.controls.scale}
+        />
+        <ZoomControls
+          zoomIn={this.props.zoomIn}
+          zoomOut={this.props.zoomOut}
+          updateZoomPosition={this.props.updateZoomPosition}
+          scale={this.props.controls.scale}
+        />
+      </div>
+    );
+  }
+}
+
+App.propTypes = {
+  controls: PropTypes.shape({
+    scale: PropTypes.number.isRequried
+  }),
+  zoomIn: PropTypes.func.isRequired,
+  zoomOut: PropTypes.func.isRequired,
+  updateZoomPosition: PropTypes.func.isRequired
+};
+
+App.defaultProps = {
+  controls: {
+    scale: 1
+  }
+};
 
 /**
  * Add each state to props

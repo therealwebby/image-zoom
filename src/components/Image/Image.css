@@ -8,6 +8,7 @@
   max-width: 50%;
   background-color: var(--stage-background);
   transform: translateY(-50%);
+  overflow: hidden;
 }
 
 .image {
